@@ -59,3 +59,5 @@ This repository is armed with a `.github/workflows/deploy.yml` pipeline. Any pus
 <div align="center">
   <p><i>Arquitectura, Diseño y Automatización por <a href="https://ramonrios.net">RamonRios.Net</a></i></p>
 </div>
+
+<!-- Project scoping initiated -->
