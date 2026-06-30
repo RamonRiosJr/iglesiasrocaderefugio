@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rocaderefugiomontrose.com/sitemap.xml
+Sitemap: https://iglesiasrocaderefugio.org/sitemap.xml
