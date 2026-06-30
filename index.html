@@ -8,8 +8,11 @@
     <!-- SEO Meta Tags -->
     <title>Iglesia Roca de Refugio | Montrose, CO</title>
     <meta name="description" content="Adorando a Dios, Compartiendo esperanza, Sirviendo a la gente. Join us at Iglesia Roca de Refugio in Montrose, CO for worship, prayer, and community." />
-    <meta name="keywords" content="Iglesia Roca de Refugio, Church Montrose CO, Hispanic Church Montrose, Pastor Benjamin Aviña" />
+    <meta name="keywords" content="Iglesia Roca de Refugio, Church Montrose CO, Hispanic Church Montrose, Pastor Benjamin Aviña, Iglesias Cristianas en Colorado" />
     <meta name="author" content="Iglesia Roca de Refugio" />
+    
+    <link rel="canonical" href="https://rocaderefugiomontrose.com/" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     
     <!-- OpenGraph / Facebook -->
     <meta property="og:type" content="website" />
@@ -47,7 +50,21 @@
         "@type": "GeoCoordinates",
         "latitude": 38.4815414,
         "longitude": -107.8821946
-      }
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "10:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Wednesday"],
+          "opens": "19:00",
+          "closes": "21:00"
+        }
+      ]
     }
     </script>
     
@@ -59,18 +76,18 @@
   <body>
     
     <!-- Navigation -->
-    <nav class="glass-nav">
+    <nav class="glass-nav" aria-label="Main Navigation">
       <div class="nav-container">
-        <a href="#" class="logo">Roca de Refugio</a>
+        <a href="#" class="logo" aria-label="Ir al inicio">Roca de Refugio</a>
         <div class="nav-links">
-          <a href="#about">Nosotros</a>
-          <a href="#ministries">Ministerios</a>
-          <a href="#contact">Contacto</a>
+          <a href="#about" aria-label="Acerca de Nosotros">Nosotros</a>
+          <a href="#ministries" aria-label="Nuestros Ministerios">Ministerios</a>
+          <a href="#contact" aria-label="Información de Contacto">Contacto</a>
         </div>
       </div>
     </nav>
 
-    <div id="app">
+    <main id="app">
       <!-- Hero Section -->
       <section class="hero" id="home">
         <div class="hero-overlay"></div>
@@ -93,7 +110,7 @@
             <p>Bajo el liderazgo del Pastor Benjamin Aviña, buscamos ser un refugio para todos los que necesitan esperanza, amor y restauración en Montrose y sus alrededores.</p>
           </div>
           <div class="about-image glass-card slide-in-right">
-            <img src="/assets/images/pastor-benjamin-avina.jpg" alt="Pastor Benjamin Aviña, Iglesia Roca de Refugio" />
+            <img src="/assets/images/pastor-benjamin-avina.jpg" alt="Retrato del Pastor Benjamin Aviña de la Iglesia Roca de Refugio" width="600" height="400" loading="lazy" style="aspect-ratio: 3/2;" />
             <div class="image-caption">
               <h3>Pastor Benjamin Aviña</h3>
             </div>
@@ -106,10 +123,10 @@
         <div class="container text-center">
           <h2 class="mb-4">Nuestra Comunidad</h2>
           <div class="gallery-grid">
-            <img src="/assets/images/iglesia-roca-de-refugio-worship-service-1.png" alt="Worship Service" class="gallery-img pop-in" />
-            <img src="/assets/images/iglesia-roca-de-refugio-community-1.jpg" alt="Community Event" class="gallery-img pop-in delay-1" />
-            <img src="/assets/images/iglesia-roca-de-refugio-church-family.jpg" alt="Church Family" class="gallery-img pop-in delay-2" />
-            <img src="/assets/images/iglesia-roca-de-refugio-youth-group.jpg" alt="Youth Group" class="gallery-img pop-in delay-3" />
+            <img src="/assets/images/iglesia-roca-de-refugio-worship-service-1.png" alt="Servicio de adoración en la Iglesia Roca de Refugio" width="300" height="250" loading="lazy" class="gallery-img pop-in" />
+            <img src="/assets/images/iglesia-roca-de-refugio-community-1.jpg" alt="Evento comunitario y convivencia de la iglesia" width="300" height="250" loading="lazy" class="gallery-img pop-in delay-1" />
+            <img src="/assets/images/iglesia-roca-de-refugio-church-family.jpg" alt="Familias congregándose en la Iglesia Roca de Refugio" width="300" height="250" loading="lazy" class="gallery-img pop-in delay-2" />
+            <img src="/assets/images/iglesia-roca-de-refugio-youth-group.jpg" alt="Grupo de jóvenes adorando juntos" width="300" height="250" loading="lazy" class="gallery-img pop-in delay-3" />
           </div>
         </div>
       </section>
@@ -162,7 +179,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer>
