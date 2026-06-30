@@ -1,6 +1,9 @@
 {
   "name": "iglesiasrocaderefugio",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Adorando a Dios, Compartiendo esperanza, Sirviendo a la gente. Join us at Iglesia Roca de Refugio in Montrose, CO.",
+  "keywords": ["Iglesia Roca de Refugio", "Church", "Montrose", "Hispanic Church"],
+  "author": "RamonRios.Net",
   "private": true,
   "type": "module",
   "scripts": {
