@@ -107,32 +107,18 @@ a:hover {
   animation: shine 5s linear infinite;
 }
 
-.logo-icon-halo {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  position: relative;
-  box-shadow: 0 0 15px var(--color-primary), inset 0 0 10px #fff;
-  animation: pulse-halo 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
+.nav-logo-img {
+  height: 45px;
+  width: auto;
+  /* Invert the black logo to white so it's visible on dark glassmorphic navbar */
+  filter: invert(1) drop-shadow(0 0 5px rgba(212, 175, 55, 0.7));
+  animation: pulse-drop-shadow 2.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-icon-halo::before {
-  content: '✦';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #111;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-@keyframes pulse-halo {
-  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), inset 0 0 10px #fff; }
-  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0), inset 0 0 10px #fff; }
-  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), inset 0 0 10px #fff; }
+@keyframes pulse-drop-shadow {
+  0% { filter: invert(1) drop-shadow(0 0 2px rgba(212, 175, 55, 0.4)); }
+  50% { filter: invert(1) drop-shadow(0 0 15px rgba(212, 175, 55, 1)); }
+  100% { filter: invert(1) drop-shadow(0 0 2px rgba(212, 175, 55, 0.4)); }
 }
 
 @keyframes shine {
