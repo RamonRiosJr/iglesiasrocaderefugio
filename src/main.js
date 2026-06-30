@@ -1,8 +1,14 @@
 import './style.css'
+import { registerSW } from 'virtual:pwa-register'
 
-document.querySelector('#app').innerHTML = ``; // The content is in index.html directly to be statically generated or hydrated.
-// Actually, with Vite vanilla template, the content usually goes in the DOM and Vite bundles the JS/CSS.
-// Since we put everything in index.html, we just need to make sure main.js is loaded for CSS and interactivity.
+const updateSW = registerSW({
+  onNeedRefresh() {
+    // Optionally prompt user to refresh
+  },
+  onOfflineReady() {
+    // App is ready to work offline
+  },
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   // Set current year in footer
@@ -27,4 +33,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // Run animation only once
+      }
+    });
+  }, observerOptions);
+
+  const animElements = document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .pop-in');
+  animElements.forEach(el => observer.observe(el));
 });
+

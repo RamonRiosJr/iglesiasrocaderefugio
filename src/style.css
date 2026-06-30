@@ -125,6 +125,7 @@ a:hover {
   justify-content: center;
   text-align: center;
   background: url('/assets/images/iglesia-roca-de-refugio-worship-service-3.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 .hero-overlay {
@@ -354,24 +355,36 @@ footer {
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
+}
+
+.fade-up.animate {
   animation: fadeUpAnim 0.8s forwards var(--transition-slow);
 }
 
 .slide-in-left {
   opacity: 0;
   transform: translateX(-50px);
+}
+
+.slide-in-left.animate {
   animation: slideInAnim 0.8s forwards var(--transition-slow);
 }
 
 .slide-in-right {
   opacity: 0;
   transform: translateX(50px);
+}
+
+.slide-in-right.animate {
   animation: slideInAnim 0.8s forwards var(--transition-slow);
 }
 
 .pop-in {
   opacity: 0;
   transform: scale(0.9);
+}
+
+.pop-in.animate {
   animation: popInAnim 0.8s forwards var(--transition-slow);
 }
 
