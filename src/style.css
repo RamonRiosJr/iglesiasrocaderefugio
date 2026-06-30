@@ -87,11 +87,58 @@ a:hover {
 }
 
 .logo {
-  font-family: var(--font-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--color-text);
+  position: relative;
+  z-index: 100;
+}
+
+.logo-text {
+  background: linear-gradient(to right, #ffffff, var(--color-primary), #ffffff);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+}
+
+.logo-icon-halo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  position: relative;
+  box-shadow: 0 0 15px var(--color-primary), inset 0 0 10px #fff;
+  animation: pulse-halo 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.logo-icon-halo::before {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #111;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@keyframes pulse-halo {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), inset 0 0 10px #fff; }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0), inset 0 0 10px #fff; }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), inset 0 0 10px #fff; }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .nav-links a {
