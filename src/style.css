@@ -179,8 +179,10 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('../public/assets/images/iglesia-roca-de-refugio-worship-service-3.jpg') no-repeat center center/cover;
+  background: url('../public/assets/images/iglesia-roca-de-refugio-sermon.jpg') no-repeat center center/cover;
   background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(10, 10, 15, 0.4);
 }
 
 .hero-overlay {
