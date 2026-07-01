@@ -33,6 +33,28 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* --- Dynamic Background --- */
+.bg-animation {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.08), transparent 45%),
+    radial-gradient(circle at 70% 30%, rgba(60, 40, 150, 0.08), transparent 45%);
+  z-index: -1;
+  animation: rotateGlow 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg); }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -339,23 +361,52 @@ a:hover {
 /* --- Forms & Buttons --- */
 .glass-card {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: transform var(--transition-slow);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), transparent, rgba(60, 40, 150, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
 }
 
 /* --- About Section --- */
-.about h2 {
+.about h2, .contact-info h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  background: linear-gradient(to right, #ffffff, var(--color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 .about p {
@@ -413,9 +464,7 @@ a:hover {
 }
 
 .contact-info h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
+  /* Inherited from shared h2 gradient above */
 }
 
 .contact-info > p {
