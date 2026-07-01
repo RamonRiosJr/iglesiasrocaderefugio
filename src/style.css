@@ -179,7 +179,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('/assets/images/iglesia-roca-de-refugio-worship-service-3.jpg') no-repeat center center/cover;
+  background: url('../public/assets/images/iglesia-roca-de-refugio-worship-service-3.jpg') no-repeat center center/cover;
   background-attachment: fixed;
 }
 
